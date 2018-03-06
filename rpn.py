@@ -33,7 +33,7 @@ def main():
     while True:
         result = calculate(input("rpn calc> "))
         print("Result: ", result)
-    print("Done with calculation)
+    print("Done with calculation")
 
 if __name__ == '__main__':
     main()
