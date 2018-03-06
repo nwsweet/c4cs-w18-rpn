@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 import operator
+from colorama import init
+from colorama import Fore
+
+init()
 
 
 operators = {
@@ -9,7 +13,6 @@ operators = {
     '*': operator.mul,
     '/': operator.truediv,
     '^': operator.pow,
-    '%': operator.mod,
 }
 
 def calculate(myarg):
@@ -32,9 +35,15 @@ def calculate(myarg):
 def main():
     while True:
         result = calculate(input("rpn calc> "))
-        print("Result: ", result)
-    print("Done with calculation")
+        if (result < 0):
+            print(Fore.RED + 'Result: ', result)
+            print(Fore.RESET)
+        elif (result == 0):
+            print(Fore.BLUE + 'Result: ', result)
+            print(Fore.RESET)
+        else:
+            print(Fore.GREEN + 'Result: ', result)
+            print(Fore.RESET)
 
 if __name__ == '__main__':
     main()
-
